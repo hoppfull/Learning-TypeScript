@@ -1,0 +1,14 @@
+{
+    "vs": "vs.glsl",
+    "fs": "fs.glsl",
+    "attributes": [
+        {
+            "name": "pos",
+            "size": 2
+        },
+        {
+            "name": "uv",
+            "size": 2
+        }
+    ]
+}
