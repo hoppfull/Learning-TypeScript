@@ -9,4 +9,8 @@ declare type modelBuffer = {
     nIndices: number
 }
 
-declare type attrib = { id: number, size: number, stride: number }
+declare type attrib = {
+    id: number,
+    size: number,
+    stride: number
+}

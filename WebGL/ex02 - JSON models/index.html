@@ -7,10 +7,11 @@
     <title>WebGL examples</title>
     <script src="bin/App.js"></script>
     <script src="bin/Engine.js"></script>
-    <script src="bin/Async.js"></script>
+    <script src="bin/libs/Async.js"></script>
+    <script src="bin/libs/Ajax.js"></script>
 </head>
 
-<body onload="App.run(document.getElementById('mainCanvas'))">
+<body onload="Async.start(App.run)">
     <canvas id="mainCanvas" width="640" height="480" />
     <style>
         canvas {
