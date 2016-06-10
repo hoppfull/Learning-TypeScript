@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>WebGL examples</title>
+    <script src="bin/App.js"></script>
+    <script src="bin/Engine.js"></script>
+    <script src="bin/Async.js"></script>
+    <script src="bin/Shader.js"></script>
+    <script src="bin/TestShader.js"></script>
+</head>
+
+<body onload="App.run(document.getElementById('mainCanvas'))">
+    <canvas id="mainCanvas" width="640" height="480"></canvas>
+    <nav>x offset: <input id="xOffsetSlider" max="1" min="-1" step="0.02" type="range"></nav>
+    <nav>y offset: <input id="yOffsetSlider" max="1" min="-1" step="0.02" type="range"></nav>
+    <style>
+        canvas {
+            border: 1px dashed gray;
+        }
+    </style>
+</body>
+
+</html>
