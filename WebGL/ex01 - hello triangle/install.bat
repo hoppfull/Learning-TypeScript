@@ -1,7 +1,9 @@
 @ECHO OFF
 
-PUSHD "./server/"
+PUSHD ./server/
 
 CALL npm i
 
 POPD
+
+PAUSE
