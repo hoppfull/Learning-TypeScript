@@ -1,5 +1,7 @@
 module App {
     export function main() {
-        console.log("Hello, world!")
+        // Retrieve canvas reference:
+        const canvas = <HTMLCanvasElement | null>document.getElementById('myCanvas');
+        if (!canvas) throw "myCanvas does not exist!"
     }
 }
