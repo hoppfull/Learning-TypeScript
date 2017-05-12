@@ -96,13 +96,17 @@ if (!gl.getShaderParameter(fShader, gl.COMPILE_STATUS))
     throw `Fragment shader compilation error: ${gl.getShaderInfoLog(fShader)}`
 ```
 #### Compile shader program
-An empty shader program is created. Shaders are attached to it and program is compiled. Shaders are not needed after this point so they are deleted to free up resources. Compilation status is finally checked for errors before proceeding:
+An empty shader program is created. Shaders are attached to it and program is compiled. Shaders are not needed after this point so they are detached from shader program and deleted to free up resources. Compilation status is finally checked for errors before proceeding:
 ```typescript
 const shaderProgram = gl.createProgram()
 
 gl.attachShader(shaderProgram, vShader)
 gl.attachShader(shaderProgram, fShader)
+
 gl.linkProgram(shaderProgram)
+
+gl.detachShader(shaderProgram, vShader)
+gl.detachShader(shaderProgram, fShader)
 
 gl.deleteShader(vShader)
 gl.deleteShader(fShader)

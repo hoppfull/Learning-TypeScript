@@ -44,7 +44,11 @@ module App {
 
         gl.attachShader(shaderProgram, vShader)
         gl.attachShader(shaderProgram, fShader)
+        
         gl.linkProgram(shaderProgram)
+
+        gl.detachShader(shaderProgram, vShader)
+        gl.detachShader(shaderProgram, fShader)
 
         gl.deleteShader(vShader)
         gl.deleteShader(fShader)
