@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>React example</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js" integrity="sha256-Aoj16fina1TqHL4PHoZ7swSL79hpfmgRSild8mste+U="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react.min.js" integrity="sha256-lLTXVU5NHLl101VgD3LswV6ZgI2PjSjZ5dVzhBcq52k="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js" integrity="sha256-4DRNdBX+quo7fRIFuR9yhr157hq/9FcAsHRDNQEXZSM="
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+        System.set('react', System.newModule(React))
+        System.set('react-dom', System.newModule(ReactDOM))
+    </script>
+</head>
+
+<body onload="System.import('App').then(modules => modules.App.main())">
+</body>
+
+</html>
