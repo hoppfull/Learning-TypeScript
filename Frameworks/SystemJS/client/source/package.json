@@ -1,0 +1,10 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "author": "hoppfull@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "@types/underscore": "^1.8.0"
+  }
+}
