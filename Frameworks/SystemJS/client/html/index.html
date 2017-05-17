@@ -1,0 +1,26 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>SystemJS example</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.20.12/system.js" integrity="sha256-Aoj16fina1TqHL4PHoZ7swSL79hpfmgRSild8mste+U="
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" integrity="sha256-obZACiHd7gkOk9iIL/pimWMTJ4W/pBsKu+oZnSeBIek="
+        crossorigin="anonymous"></script>
+
+    <script src="app.js"></script>
+
+    <script>
+        System.set('underscore', System.newModule(_))
+        const appPromise = System.import('App')
+    </script>
+</head>
+
+<body onload="appPromise.then(module => module.App.main())">
+</body>
+
+</html>
