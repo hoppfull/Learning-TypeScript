@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "noFallthroughCasesInSwitch": true,
+        "strictNullChecks": true,
+        "outDir": "../bin/"
+    }
+}

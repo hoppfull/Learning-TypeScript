@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "basic typescript server",
+  "main": "main.ts",
+  "repository": {
+    "type": "git",
+    "url": "github.com/hoppfull"
+  },
+  "author": "hoppfull",
+  "license": "MIT",
+  "dependencies": {
+    "@types/express": "^4.0.35",
+    "express": "^4.15.2"
+  }
+}
