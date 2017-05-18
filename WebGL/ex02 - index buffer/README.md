@@ -33,7 +33,7 @@ void main(void) {
 ## WebGL example rendering a square with an index buffer
 ### Setting up square model
 #### Create a hard coded square mesh
-This mesh could be loaded from a resource but for this simple model it's hard coded to simplify example:
+In this example every three elements describes a vector which represents a vertex position where the first element is the x-coordinate, the second element is the y-coordinate and the third element is the z-coordinate. More information per vertex could be added though if needed:
 ```typescript
 const squareMesh = new Float32Array([
     -1,  1,  0,
@@ -43,6 +43,7 @@ const squareMesh = new Float32Array([
 ])
 ```
 #### Create hard coded square mesh indices
+Every three elements describes which three vectors to use in the vertex buffer in order to form a triangle. In this example the first triangle is built from the zeroeth vector, the first vector and the second vector in the vertex buffer. The second triangle is built from the second vector, the third vector and finally the zeroeth vector in the vertex buffer. This way we can reuse vectors and for large models we will save a lot of memory space on the GPU:
 ```typescript
 const squareIndices = new Uint16Array([
     0, 1, 2,
