@@ -51,7 +51,6 @@ const squareIndices = new Uint16Array([
 ])
 ```
 #### Send mesh data to GPU
-Mesh data is sent to GPU:
 ```typescript
 const vbo = gl.createBuffer() // Create buffer object
 gl.bindBuffer(gl.ARRAY_BUFFER, vbo) // Select buffer object
@@ -69,6 +68,18 @@ gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, squareIndices, gl.STATIC_DRAW)
 gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, null) // Deselect buffer object
 ```
 ### Defining render loop
+#### Render scene
+Instead of using `drawArrays` we select our IBO and use `drawElements` to render our model:
+```typescript
+gl.useProgram(shaderProgram)
+gl.bindBuffer(gl.ARRAY_BUFFER, vbo)
+
+gl.enableVertexAttribArray(shaderProgram_posAttribute)
+gl.vertexAttribPointer(shaderProgram_posAttribute, 3, gl.FLOAT, false, 0, 0)
+
+gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibo)
+gl.drawElements(gl.TRIANGLES, squareIndices.length, gl.UNSIGNED_SHORT, 0)
+```
 #### Deselect buffer objects and shader programs
 Since we now need to also select which index buffer object to use when we render we need to make sure we deselect the IBO when we're done rendering to avoid something tampering with our index data in the future:
 ```typescript
@@ -81,16 +92,4 @@ try {
     gl.bindBuffer(gl.ARRAY_BUFFER, null)
     gl.useProgram(null)
 }
-```
-#### Render scene
-Instead of using `drawArrays` we select our IBO and use `drawElements` to render our model:
-```typescript
-gl.useProgram(shaderProgram)
-gl.bindBuffer(gl.ARRAY_BUFFER, vbo)
-
-gl.enableVertexAttribArray(shaderProgram_posAttribute)
-gl.vertexAttribPointer(shaderProgram_posAttribute, 3, gl.FLOAT, false, 0, 0)
-
-gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, ibo)
-gl.drawElements(gl.TRIANGLES, squareIndices.length, gl.UNSIGNED_SHORT, 0)
 ```
