@@ -8,11 +8,12 @@ Make sure type definitions for *underscore.js* is installed in the local *TypeSc
 ```
 ### `tsconfig.json`:
 #### Setup *TypeScript* to work natively with *SystemJS*
-`module` is set to `"system"` to make *TypeScript* work natively with *SystemJS*. `outFile` is set to output a single bundled file with modules organized in a way that *SystemJS* can work with:
+`module` is set to `"system"` to make *TypeScript* work natively with *SystemJS*. `moduleResolution` is set to `"node"` to allow *TypeScript* to work with type definitions in regular node modules. `outFile` is set to output a single bundled file with modules organized in a way that *SystemJS* can work with:
 ```json
 {
     "compilerOptions": {
         "module": "system",
+        "moduleResolution": "node",
         "target": "es6",
         "noImplicitAny": true,
         "strictNullChecks": true,
